@@ -1,6 +1,8 @@
 let colorSpace = document.getElementById('color-space');
 let colorName = document.getElementById('color-name')
+const chromeBar = document.getElementsByTagName('meta')["theme-color"];
 let colorPos = 0;
+
 function generateRandomNumber(min, max){
   return Math.floor(Math.random() * (max-min) + min);
 }
@@ -17,6 +19,7 @@ function shuffle(ordered){
 function setColor(RGBColor){
   colorSpace.style.background = `#${RGBColor[0]}`;
   colorName.innerHTML = RGBColor[1];
+  chromeBar.content = `#${RGBColor[0]}`;
 }
 
 let colorBucket = shuffle(colorList);
